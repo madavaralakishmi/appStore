@@ -1,0 +1,22 @@
+.bg-white {
+  background-color: white;
+  width: 200px;
+  height: 150px;
+  text-align: center;
+  margin: 7px;
+  padding: 12px;
+  border-radius: 7px;
+}
+
+.paragraph {
+  font-family: Bree Serif;
+}
+
+li {
+  margin: 12px;
+}
+
+img {
+  width: 60px;
+  height: 60px;
+}
