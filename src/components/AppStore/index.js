@@ -303,18 +303,25 @@ class AppStore extends Component {
     this.setState({appid: tabId})
   }
 
-  ongetbuttondata = () => {
+  ongetbuttondata = (result) => {
     const {appid} = this.state
-    const onFiltered = appsList.filter(each => each.category === appid)
+    const onFiltered = result.filter(each => each.category === appid)
     return onFiltered
+  }
+  
+  
+  onfilterResult = () => {
+    const {searchInput} = this.state
+    const result = appsList.filter(each =>
+      each.appName.toLowerCase().includes(searchInput.toLowerCase()),
+    )
+    return result
   }
 
   render() {
     const {searchInput} = this.state
-    const result = appsList.filter(each =>
-      each.category.toLowerCase().includes(searchInput),
-    )
-    const onFiltered = this.ongetbuttondata()
+    const {appid} = this.state
+    const onFiltered = this.ongetbuttondata(result)
 
     return (
       <div className="bg-image">
@@ -338,6 +345,7 @@ class AppStore extends Component {
               key={each.tabId}
               tabsList={each}
               onbutton={this.onbutton}
+              isActive={each.tabId === appid}
             />
           ))}
         </ul>
