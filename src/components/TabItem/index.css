@@ -1,8 +1,17 @@
-/* Write your CSS here */
+
 button {
   margin-right: 12px;
   background-color: transparent;
-  border: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
   cursor: pointer;
   outline: none;
+  padding-bottom: 6px;
+  border-bottom-color: #dfe2e5;
+}
+
+.btn-clicked {
+  color: #2563eb;
+  border-bottom-color: #2563eb;
 }
